@@ -23,7 +23,7 @@ function App() {
    <div>
     <InputCard></InputCard>
     <EntryTable></EntryTable>
-    <button onClick={handleClick} >Say hi to server</button></div>
+    </div>
   )
 }
 

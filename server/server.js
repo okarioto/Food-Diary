@@ -21,7 +21,8 @@ function validateString(string) {
 }
 
 function validateRating(rating) {
-    return (typeof rating === 'number') && (rating >= 0) && (rating <= 10)
+    parseInt(rating)
+    return (!Number.isNaN(rating)) && (rating >= 0) && (rating <= 10)
 }
 
 
