@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import './style/App.css'
+import '../style/App.css'
 import axios from "axios";
-
+import InputCard from './InputCard';
+import EntryTable from './EntryTable';
 
 
 function App() {
@@ -19,7 +20,10 @@ function App() {
   }
 
   return (
-   <div><button onClick={handleClick} >Say hi to server</button></div>
+   <div>
+    <InputCard></InputCard>
+    <EntryTable></EntryTable>
+    <button onClick={handleClick} >Say hi to server</button></div>
   )
 }
 
