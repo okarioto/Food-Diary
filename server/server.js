@@ -96,7 +96,7 @@ app.put("/entries", async (req, res) => {
     if (!validateRating(k_rating)) {
         return res.status(400).send('Invalid k_rating');
     }
-    if (!validateString(price) || price.length > 10) {
+    if (typeof price !== 'number' || price.length > 10) {
         return res.status(400).send('Invalid price');
     }
     if (!validateString(comment)) {

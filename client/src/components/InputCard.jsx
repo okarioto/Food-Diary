@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState} from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL;
 
-function InputCard() {
+function InputCard(props) {
   const [rating, setRating] = useState({
     kRating: 5,
     rRating: 5,
@@ -20,7 +20,7 @@ function InputCard() {
           price: price.value,
           comment: comment.value,
         });
-        console.log(result.data);
+        props.setNewEntry(result.data);
       } catch (error) {
         console.log(error);
         console.log('Errored out with: ', error.response.data);

@@ -6,25 +6,27 @@ import EntryTable from './EntryTable';
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [newEntry, setNewEntry] = useState({});
+  const [entries, setEntries] = useState([]);
 
-  async function handleClick(){
-    try {
-       const result =  await axios.get("http://localhost:3000/");
-       console.log(result);
-    } catch (error) {
-      console.log(error);
-      
-    }
-   
-  }
+
 
   return (
-   <div>
-    <InputCard></InputCard>
-    <EntryTable></EntryTable>
+    <div className="app">
+      <InputCard
+        newEntry={newEntry}
+        setNewEntry={setNewEntry}
+        entries={entries}
+        setEntries={setEntries}
+      ></InputCard>
+      <EntryTable
+        newEntry={newEntry}
+        setNewEntry={setNewEntry}
+        entries={entries}
+        setEntries={setEntries}
+      ></EntryTable>
     </div>
-  )
+  );
 }
 
 export default App

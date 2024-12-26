@@ -2,6 +2,10 @@
     border: 1px solid red;
 } */
 
+/* .app{
+  width: 100%;
+} */
+
 :root, h2, text {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -55,6 +59,7 @@ button {
 button:hover {
   border-color: rgba(255, 192, 203, 0.95);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -76,7 +81,8 @@ button:focus-visible {
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
 .inputCard form input,
-.inputCard form textarea {
+.inputCard form textarea,
+.entry input {
   -webkit-appearance: none; 
   appearance: none;
   width: 100%;
@@ -92,6 +98,13 @@ button:focus-visible {
   opacity: 0.7;
   -webkit-transition: .2s;
   transition: opacity .2s;
+}
+
+.entry input{
+  font-size: 1em;
+  border-radius: 5px;
+  margin: 0;
+
 }
 
 /* The slider itself */
@@ -119,7 +132,7 @@ button:focus-visible {
   border-radius: 50%;
 }
 
-.inputCard input::-webkit-inner-spin-button {
+input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -138,3 +151,33 @@ button:focus-visible {
   }
 } */
 
+
+table {
+  width: 1000px;
+  border-collapse: collapse; /* Ensures borders between cells are collapsed */
+}
+
+th, td {
+  padding: 8px 12px;
+  text-align: left; 
+  border: 1px solid #ddd; 
+  border-radius: 5px;
+}
+
+th {
+  background-color: rgba(255, 192, 203, 0.95); 
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 192, 203, 0.25);
+}
+
+tr:hover {
+  background-color: #93cbf054; 
+}
+
+.entry .delete:hover {
+  border-color: rgba(255, 192, 203, 0.95);
+  background-color: rgba(249, 51, 84, 0.95);
+}
