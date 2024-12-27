@@ -31,7 +31,7 @@ function Entry(props) {
     }
   }
 
-  async function handleEditClick(event) {
+  async function handleEditClick() {
     if(editing){
             try {
               //put request to db

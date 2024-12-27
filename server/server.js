@@ -21,7 +21,7 @@ function validateString(string) {
 }
 
 function validateRating(rating) {
-    parseInt(rating)
+    rating = parseInt(rating)
     return (!Number.isNaN(rating)) && (rating >= 0) && (rating <= 10)
 }
 
@@ -34,7 +34,10 @@ app.get("/", (req, res) => {
 
 //Get all entries
 app.get("/entries", async (req, res) => {
-    const { column = 'id', direction = 'ASC' } = req.query;
+    var { column = 'id', direction = 'ASC' } = req.query;
+    direction ||= 'ASC';
+    column ||= 'id';
+
     const validColumns = ['id', 'restaurant', 'r_rating', 'k_rating', 'price', 'comment']
     const validDirections = ['ASC', 'DESC']
 

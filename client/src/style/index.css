@@ -56,6 +56,12 @@ button {
   transition: border-color 0.25s;
 }
 
+.entryTable .order{
+  width: 15px;
+  height: 15px;
+  padding: 0;
+}
+
 button:hover {
   border-color: rgba(255, 192, 203, 0.95);
 }
@@ -162,11 +168,14 @@ th, td {
   text-align: left; 
   border: 1px solid #ddd; 
   border-radius: 5px;
+
 }
 
 th {
   background-color: rgba(255, 192, 203, 0.95); 
   color: white;
+  text-align: center;
+
 }
 
 tr:nth-child(even) {

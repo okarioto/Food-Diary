@@ -11,9 +11,17 @@ const pool = new pg.Pool({
     port: process.env.DB_PORT,
 });
 
+/**
+ * Gets users
+ * @requires Direction and column are sanitized 
+ * @param {string} direction - ASC or DESC.
+ * @param {string} column - Column to sort by.
+ * @returns {Array} Array of user objects
+ */
 async function getEntries(column, direction) {
+    const query = `SELECT * FROM entries ORDER BY ${column} ${direction};`
     try {
-        const result = await pool.query(`SELECT * FROM entries ORDER BY ${column} ${direction};`)
+        const result = await pool.query(query)
         return result.rows;
     } catch (error) {
         console.error(error);
